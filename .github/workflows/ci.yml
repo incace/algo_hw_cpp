@@ -1,0 +1,30 @@
+name: CI
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+    branches: [main, master]
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+
+    strategy:
+      fail-fast: false
+      matrix:
+        project:
+          - alisa_help
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Configure ${{ matrix.project }}
+        run: cmake -S ${{ matrix.project }} -B ${{ matrix.project }}/build -DCMAKE_BUILD_TYPE=Release
+
+      - name: Build ${{ matrix.project }}
+        run: cmake --build ${{ matrix.project }}/build --parallel 4
+
+      - name: Test ${{ matrix.project }}
+        run: ctest --test-dir ${{ matrix.project }}/build --output-on-failure
