@@ -15,6 +15,7 @@ jobs:
       matrix:
         project:
           - alisa_help
+          - factory
 
     steps:
       - name: Checkout

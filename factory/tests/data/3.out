@@ -1,0 +1,19 @@
+start 0 0 0 0
+start 0 2 0 1
+finish 3 0 0 0
+start 3 1 0 0
+wait 3 0 1 1 0
+finish 5 2 0 1
+start 5 0 1 1
+wait 5 2 1 0 0
+finish 6 1 0 0
+start 6 2 1 0
+wait 6 1 1 1 0
+finish 9 0 1 1
+start 9 1 1 1
+ready 9 0 1
+finish 10 2 1 0
+ready 10 2 0
+finish 13 1 1 1
+ready 13 1 1
+stop 13

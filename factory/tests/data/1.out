@@ -1,0 +1,7 @@
+start 0 0 0 0
+finish 5 0 0 0
+start 5 1 0 0
+ready 5 0 0
+finish 10 1 0 0
+ready 10 1 0
+stop 10
